@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS nodes (
+    id BIGSERIAL PRIMARY KEY,
+
+    parent_id BIGINT REFERENCES nodes(id) ON DELETE CASCADE,
+
+    name VARCHAR(255) NOT NULL,
+
+    type VARCHAR(50) NOT NULL DEFAULT 'folder',
+
+    depth INTEGER NOT NULL DEFAULT 0,
+
+    path TEXT NOT NULL,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
