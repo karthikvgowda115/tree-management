@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { TreeNode } from "../types/tree";
 
-const API_URL = "http://localhost:5000/api/tree";
+const API_URL = "https://tree-managements.onrender.com/api/tree";
 
 export async function getRootNodes(): Promise<TreeNode[]> {
   const response = await axios.get(`${API_URL}/root`);
